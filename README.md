@@ -112,12 +112,23 @@ namespace RandomNumber
 ให้เขียนโปรแกรมโดยมีข้อกำหนดดังนี้
 
 1. สร้างตัวแปร Random โดยการมีสุ่มเลข 1 หลัก (0 – 9 )
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.1.PNG?raw=true)
+
+
 
 1. สร้างตัวแปรชนิด integer สำหรับรับค่าจากผู้ใช้
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.2.PNG?raw=true)
+
+
+
 
 1. สร้างตัวแปร boolean โดยเก็บค่าที่ได้จากการเปรียบเทียบตัวเลขในข้อ 1 และ 2
 
+
 1. ให้พิมพ์ค่าตัวแปร boolean ในข้อ 3 ออกทางหน้าจอ
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.3.PNG?raw=true)
+
+
 
 
 ##การเขียนโปรแกรมด้วยตัวดำเนินการทางตรรกะ
@@ -202,14 +213,19 @@ namespace thruthTable
 
 ##การทดลอง การใช้งานข้อมูลชนิด boolean (2)
 ให้เขียนโปรแกรมเพื่อสร้างตารางความจริงของลอจิกดังต่อไปนี้
-```
+
 1. AND
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.4.PNG?raw=true)
 2. OR
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.5.PNG?raw=true)
 3. NOT
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.6.PNG?raw=true)
 4. NAND
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.7.PNG?raw=true)
 5. NOR
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.8.PNG?raw=true)
 6. Exclusive OR
-```
+ ![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.9.PNG?raw=true)
 
 
 
