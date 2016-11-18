@@ -12,14 +12,14 @@ xxx	|ใช้ได้	|ไม่มีตัวอักษรที่ละ�
 null	|ใช้ไม่ได้	|เป็นคำสงวนในภาษา C#
 _value	| ได้ |	
 First-name | ใช่ไม่ได้| มีเครื่องหมายทางคณิตศาสตร์อยู่ในชื่อ			
-Hello!	| |	
-w*h 	| |			
-time	| |			
-do	| |			
-Do	| |			
-21November	| |			
-ladkrabang	| |			
-Student ID	| |			
+Hello!	|ใช้ไม่ได้ |	มีอักษรพิเศษ
+w*h 	| ใช้ไม่ได้|	มีเครื่องหมายทางคณิตศาสตร์		
+time	|ใช้ได้ |	ไม่มีอักษรที่ละเมิด		
+do	| ใช้ได้|			
+Do	|ใช้ได้ |			
+21November	|ใช้ไม่ได้ |	ขึ้นต้นด้วยตัวเลข		
+ladkrabang	| ใช้ได้|			
+Student ID	| ใช้ไม่ได้|	มีวรรคเว้นในชื่อ		
 
 ##2). ชนิดข้อมูลภายในภาษา C# 
   2.1).	Property ของชนิดข้อมูล
@@ -268,6 +268,7 @@ public class intergerTest
 9.	y%8
 10.	100*x+y%2-a
 ```
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.10.PNG?raw=true)
 ##2.2.3. ชนิดข้อมูลเลขทศนิยม (Floating Point and Decimal Types)
 ตัวเลขจำนวนทศนิยม มักจะใช้ในการคำนวณทางวิทยาศาสตร์ เนื่องจากค่าในวิทยาศาสตร์ต้องการความละเอียดสูง หรือมีค่าสูงมากกว่าที่เลขจำนวนเต็มจะเก็บได้
 
@@ -315,16 +316,80 @@ SunToEarthTimeOfLight = 8.33333333333333 minutes
 **ตารางที่ 1** ระยะทางจากดวงอาทิตย์ถึงดาวเคราะห์ต่างๆ
 
 ดาวเคราะห์ | ระยะทางจากดวงอาทิตย์ | ระยะทางในหน่วย A.U. | เวลาของแสง (นาที)
-:----:|:----:|:----:|:----: 
-Mercury |	57,910,000 km		
-Venus |	108,200,000 km		
-Earth |	149,600,000 km		
-Mars |	227,940,000 km		
-Jupiter |	778,330,000 km		
-Uranus |	2,873,550,000 km		
-Neptune |	4,501,000,000 km		
-Pluto |	5,945,900,000 km		
+:----:|:----:|:----:|:----:    
+Mercury |	57,910,000 km	| 0.386920491854452    | 3.22433743212043	
+Venus |	108,200,000 km		| 0.722928634409457    | 6.02440528674548
+Earth |	149,600,000 km		| 0.99539036115109     | 8.32949196762591
+Mars |	227,940,000 km		| 1.5229607479417      | 12.6913395661808
+Jupiter |	778,330,000 km	| 5.20034236617295     | 12.6913395661808	
+Uranus |	2,873,550,000 km| 19.1993676285332     | 159.994730237777		
+Neptune |	4,501,000,000 km| 30.0730294221531	| 250.608578517943	
+Pluto |	5,945,900,000 km	 | 39.7269996981071      | 331.058330817559	
+```
+using System;
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const double lightSpeed = 186000d;   // miles per second
+            Console.WriteLine("Light speed = {0} Mile Per second", lightSpeed);
+            const double mileTokm = 1.609344;
+            Console.WriteLine("Light speed = {0} km Per second", lightSpeed * mileTokm);
+            const double au = 93000000d;
+            const double SunToMercuryDistance = 57910000  / mileTokm ;
+            Console.WriteLine("SunToMercuryDistance = {0} A.U.", SunToMercuryDistance / au);
+            double SunToMercuryTimeOfLight = SunToMercuryDistance / lightSpeed;  // miles
+            Console.WriteLine("SunToMercuryTimeOfLight = {0} seconds", SunToMercuryTimeOfLight);
+            Console.WriteLine("SunToMercuryTimeOfLight = {0} minutes", SunToMercuryTimeOfLight / 60d);
 
+            const double SunToVenusDistance = 108200000 / mileTokm;
+            Console.WriteLine("SunToVenusDistance = {0} A.U.", SunToVenusDistance / au);
+            double SunToVenusTimeOfLight = SunToVenusDistance / lightSpeed;  // miles
+            Console.WriteLine("SunToVenusTimeOfLight = {0} seconds", SunToVenusTimeOfLight);
+            Console.WriteLine("SunToVenusTimeOfLight = {0} minutes", SunToVenusTimeOfLight / 60d);
+
+            const double SunToEarthDistance = 149600000 / mileTokm;
+            Console.WriteLine("SunToEarthDistance = {0} A.U.", SunToEarthDistance / au);
+            double SunToEarthTimeOfLight = SunToEarthDistance / lightSpeed;  // miles
+            Console.WriteLine("SunToEarthTimeOfLight = {0} seconds", SunToEarthTimeOfLight);
+            Console.WriteLine("SunToEarthTimeOfLight = {0} minutes", SunToEarthTimeOfLight / 60d);
+
+            const double SunToMarsDistance = 227940000 / mileTokm;
+            Console.WriteLine("SunToMarsDistance = {0} A.U.", SunToMarsDistance / au);
+            double SunToMarsTimeOfLight = SunToMarsDistance / lightSpeed;  // miles
+            Console.WriteLine("SunToMarsTimeOfLight = {0} seconds", SunToMarsTimeOfLight);
+            Console.WriteLine("SunToMarsTimeOfLight = {0} minutes", SunToMarsTimeOfLight / 60d);
+
+            const double SunToJupiterDistance = 778330000 / mileTokm;
+            Console.WriteLine("SunToJupiterDistance = {0} A.U.", SunToJupiterDistance / au);
+            double SunToJupiterTimeOfLight = SunToMarsDistance / lightSpeed;  // miles
+            Console.WriteLine("SunToJupiterTimeOfLight = {0} seconds", SunToJupiterTimeOfLight);
+            Console.WriteLine("SunToJupiterTimeOfLight = {0} minutes", SunToJupiterTimeOfLight / 60d);
+
+            const double SunToUranusDistance = 2873550000 / mileTokm;
+            Console.WriteLine("SunToUranusDistance = {0} A.U.", SunToUranusDistance / au);
+            double SunToUranusTimeOfLight = SunToUranusDistance / lightSpeed;  // miles
+            Console.WriteLine("SunToUranusTimeOfLight = {0} seconds", SunToUranusTimeOfLight);
+            Console.WriteLine("SunToUranusTimeOfLight = {0} minutes", SunToUranusTimeOfLight / 60d);
+
+            const double SunToNeptuneDistance = 4501000000 / mileTokm;
+            Console.WriteLine("SunToNeptuneDistance = {0} A.U.", SunToNeptuneDistance / au);
+            double SunToNeptuneTimeOfLight = SunToNeptuneDistance / lightSpeed;  // miles
+            Console.WriteLine("SunToNeptuneTimeOfLight = {0} seconds", SunToNeptuneTimeOfLight);
+            Console.WriteLine("SunToNeptuneTimeOfLight = {0} minutes", SunToNeptuneTimeOfLight / 60d);
+
+            const double SunToPlutoDistance = 5945900000 / mileTokm;
+            Console.WriteLine("SunToPlutoDistance = {0} A.U.", SunToPlutoDistance / au);
+            double SunToPlutoTimeOfLight = SunToPlutoDistance / lightSpeed;  // miles
+            Console.WriteLine("SunToPlutoTimeOfLight = {0} seconds", SunToPlutoTimeOfLight);
+            Console.WriteLine("SunToPlutoTimeOfLight = {0} minutes", SunToPlutoTimeOfLight / 60d);
+
+        }
+    }
+}
+```
 ##คลาส Math 
 ในภาษา C# มีคลาสที่เป็นตัวช่วยคำนวณทางคณิตศาสตร์ ที่ช่วยให้เราสามารถคำนวณฟังก์ชันพื้นฐานได้ อย่างรวดเร็ว ไม่ต้องพัฒนาโปรแกรมเพิ่มเติมด้วยเอง นั่นคือคลาส Math  ฟังก์ชันทางคณิตศาสตร์ที่ใช้บ่อยๆ สามารถดูรายละเอียดทั้งหมดได้จาก 
 [system.math](http://msdn.microsoft.com/en-us/library/system.math%28v=vs.110%29.aspx) 
@@ -377,10 +442,14 @@ The sine of       6.00 = -0.279415         *
 ```
 
 ##การทดลอง พล็อตรูปคลื่นทางคณิตศาสตร์
-จากโปรแกรมตัวอย่าง ให้ดัดแปลงโปรแกรมเพื่อวาดรูปคลื่นดังต่อไปนี้
-```
+จากโปรแกรมตัวอย่าง ให้ดัดแปลงโปรแกรมเพื่อวาดรูปคลื่นดังต่อไป
+
+
 1.	y = x2
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.11.PNG?raw=true)	
+
 2.	y = cos(x)
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.12.PNG?raw=true)
+
 3.	y = tan(x)
-```
-	
+![](https://github.com/jaruwan2538/LAB-07/blob/master/Capture7.13.PNG?raw=true)
